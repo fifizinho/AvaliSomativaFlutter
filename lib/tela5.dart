@@ -20,13 +20,15 @@ class Tela5 extends StatefulWidget {
 }
 
 class _HomePageState extends State<Tela5> {
-  TextEditingController usuarioController = new TextEditingController();
-  TextEditingController senhaController = new TextEditingController();
+  TextEditingController nomeController = new TextEditingController();
+  TextEditingController precoController = new TextEditingController();
+  TextEditingController descricaoController = new TextEditingController();
   String _textoInfo = "Informe seus dados";
 
   void _limpar() {
-    usuarioController.text = "";
-    senhaController.text = "";
+    nomeController.text = "";
+    precoController.text = "";
+    descricaoController.text = "";
     setState(() {
       _textoInfo = "informa seus dados";
     });
@@ -35,15 +37,17 @@ class _HomePageState extends State<Tela5> {
   void _cadastrar() {
 
 
-    String user = usuarioController.text;
-    String senha = senhaController.text;
+    String name = nomeController.text;
+    String preco = precoController.text;
+    String descricao = descricaoController.text;
     setState(() {
-      if (user.isEmpty || senha.isEmpty) {
-        _textoInfo = "Erro ao cadastrar usuário";
+      if (name.isEmpty || preco.isEmpty || descricao.isEmpty) {
+        _textoInfo = "Erro ao cadastrar produto";
       } else {
         _textoInfo = "Dados cadastrados com sucesso!";
-        usuarioController.text = "";
-        senhaController.text = "";
+        nomeController.text = "";
+        precoController.text = "";
+        descricaoController.text = "";
       }
     });
   }
@@ -54,7 +58,7 @@ class _HomePageState extends State<Tela5> {
       appBar: AppBar(
         title: Text("Cadastro de Produtos"),
         centerTitle: true,
-        backgroundColor: Colors.cyanAccent,
+        backgroundColor: Colors.deepPurple,
         actions: <Widget>[
           IconButton(onPressed: _limpar, icon: Icon(Icons.refresh))
         ],
@@ -67,39 +71,37 @@ class _HomePageState extends State<Tela5> {
             const Icon(
               Icons.shopping_bag,
               size: 120.0,
-              color: Colors.cyanAccent,
+              color: Colors.deepPurple,
             ),
             TextField(
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 labelText: "Nome",
-                labelStyle: TextStyle(color: Colors.cyanAccent),
+                labelStyle: TextStyle(color: Colors.deepPurple),
               ),
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 25.0),
-              controller: usuarioController,
+              controller: nomeController,
             ),
             TextField(
-              obscureText: true,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 labelText: "Preço",
-                labelStyle: TextStyle(color: Colors.cyanAccent),
+                labelStyle: TextStyle(color: Colors.deepPurple),
               ),
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 25.0),
-              controller: senhaController,
+              controller: precoController,
             ),
             TextField(
-              obscureText: true,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 labelText: "Descrição",
-                labelStyle: TextStyle(color: Colors.cyanAccent),
+                labelStyle: TextStyle(color: Colors.deepPurple),
               ),
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 25.0),
-              controller: senhaController,
+              controller: descricaoController,
             ),
             Padding(
               padding: const EdgeInsets.only(top: 10, bottom: 10),
@@ -111,7 +113,7 @@ class _HomePageState extends State<Tela5> {
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 textStyle: TextStyle(fontSize: 25.0),
-                                backgroundColor: Colors.cyanAccent),
+                                backgroundColor: Colors.white70),
                             onPressed: _cadastrar,
                             child: const Text("Cadastrar")),
                       ])

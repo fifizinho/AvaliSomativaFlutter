@@ -54,7 +54,7 @@ class _HomePageState extends State<Tela4> {
       appBar: AppBar(
         title: Text("Cadastro de Usuario"),
         centerTitle: true,
-        backgroundColor: Colors.cyanAccent,
+        backgroundColor: Colors.deepPurple,
         actions: <Widget>[
           IconButton(onPressed: _limpar, icon: Icon(Icons.refresh))
         ],
@@ -67,13 +67,13 @@ class _HomePageState extends State<Tela4> {
             const Icon(
               Icons.lock_person,
               size: 120.0,
-              color: Colors.cyanAccent,
+              color: Colors.deepPurple,
             ),
             TextField(
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 labelText: "Usuario",
-                labelStyle: TextStyle(color: Colors.cyanAccent),
+                labelStyle: TextStyle(color: Colors.deepPurple),
               ),
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 25.0),
@@ -84,7 +84,7 @@ class _HomePageState extends State<Tela4> {
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 labelText: "Senha",
-                labelStyle: TextStyle(color: Colors.cyanAccent),
+                labelStyle: TextStyle(color: Colors.deepPurple),
               ),
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 25.0),
@@ -100,9 +100,10 @@ class _HomePageState extends State<Tela4> {
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 textStyle: TextStyle(fontSize: 25.0),
-                                backgroundColor: Colors.cyanAccent),
+                                backgroundColor: Colors.white70),
                             onPressed: _cadastrar,
                             child: const Text("Cadastrar")),
+
                       ])
               ),
             ),

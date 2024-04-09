@@ -73,7 +73,7 @@ class _HomePageState extends State<Tela2> {
       appBar: AppBar(
         title: Text("Cadastro de IMC"),
         centerTitle: true,
-        backgroundColor: Colors.cyanAccent,
+        backgroundColor: Colors.deepPurple,
         actions: <Widget>[
           IconButton(onPressed: _limparImc, icon: Icon(Icons.refresh))
         ],
@@ -86,13 +86,13 @@ class _HomePageState extends State<Tela2> {
             const Icon(
               Icons.person_3_outlined,
               size: 120.0,
-              color: Colors.cyanAccent,
+              color: Colors.deepPurple,
             ),
             TextField(
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: "Peso",
-                labelStyle: TextStyle(color: Colors.cyanAccent),
+                labelStyle: TextStyle(color: Colors.deepPurple),
               ),
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 25.0),
@@ -102,7 +102,7 @@ class _HomePageState extends State<Tela2> {
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: "Altura",
-                labelStyle: TextStyle(color: Colors.cyanAccent),
+                labelStyle: TextStyle(color: Colors.deepPurple),
               ),
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 25.0),
@@ -119,7 +119,7 @@ class _HomePageState extends State<Tela2> {
                             style: ElevatedButton.styleFrom(
                                 textStyle:
                                 TextStyle(fontSize: 25.0),
-                                backgroundColor: Colors.cyanAccent),
+                                backgroundColor: Colors.white70),
                             onPressed: _imcPesoAltura,
                             child: const Text("Calcular")
                         ),
